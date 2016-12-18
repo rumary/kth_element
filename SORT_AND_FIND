@@ -58,6 +58,24 @@ int kth_Smallest(int arr[], int n, int k)
     return arr[k-1];
 
 }
+int median( int arr[], int n)
+{
+//    if(n%2==0)
+//    {
+//        cout<<"arr["<<n<<"/2]= "<<"arr["<<n/2<<"]="<<arr[n/2]<<endl;
+//        cout<<"arr["<<n<<"/2 -1]= "<<"arr["<<n/2-1<<"]="<<arr[n/2-1]<<endl;
+//    }
+//    if(n%2!=0)
+//    {
+//        cout<<"arr[("<<n<<"-1)/2]= "<<"arr["<<(n-1)/2<<"]="<<arr[(n-1)/2]<<endl;
+//    }
+    my_sort(arr,n);
+    if(n%2==0)
+    {
+        return (arr[n/2-1]+arr[n/2])/2;
+    }
+    else return arr[(n-1)/2];
+}
 
 int main()
 {
@@ -77,9 +95,11 @@ int main()
     {
 
         cout << "K_th smallest element is " <<kth_Smallest(arr,n,k)<<endl;
+        cout << "Median is " <<median(arr,n)<<endl;
 
     }
 
 //    my_sort(arr,n);
+
     return 0;
 }
